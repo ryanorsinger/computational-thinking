@@ -32,7 +32,7 @@ Feel free to ask questions!
 # ╔═╡ 911ccbce-ed68-11ea-3606-0384e7580d7c
 # edit the code below to set your name and kerberos ID (i.e. email without @mit.edu)
 
-student = (name = "Jazzy Doe", kerberos_id = "jazz")
+student = (name = "Mazzy Starr", kerberos_id = "mazzzzz")
 
 # press the ▶ button in the bottom right of this cell to run your edits
 # or use Shift+Enter
@@ -91,6 +91,9 @@ random_vect = rand(10) # replace this with your code!
 
 # ╔═╡ b2e91646-05f1-11eb-0ba4-d7aeccbb7d23
 ?rand
+
+# ╔═╡ 0c3b40e6-06b7-11eb-3db2-3332bbe91bdb
+
 
 # ╔═╡ cf738088-eded-11ea-2915-61735c2aa990
 md"👉 Make a function `mean` using a `for` loop, which computes the mean/average of a vector of numbers."
@@ -200,6 +203,15 @@ colored_line(random_vect)
 # ╔═╡ d862fb16-edf1-11ea-36ec-615d521e6bc0
 colored_line(create_bar())
 
+# ╔═╡ 9e61dfd8-06b8-11eb-3f85-77bb44f52bb9
+colored_line(rand(232))
+
+# ╔═╡ b0cb5d8e-06b8-11eb-1196-2563b763990e
+colored_line([0, 1, 0, 0.5])
+
+# ╔═╡ 2303915c-06b7-11eb-2635-b9ba46091293
+colored_line(rand(23))
+
 # ╔═╡ e083b3e8-ed61-11ea-2ec9-217820b0a1b4
 md"""
 ## **Exercise 2** - _Manipulating images_
@@ -212,6 +224,21 @@ Let's load a picture of Philip again.
 
 # ╔═╡ c5484572-ee05-11ea-0424-f37295c3072d
 philip_file = download("https://i.imgur.com/VGPeJ6s.jpg")
+
+# ╔═╡ 6ec2cfa6-06b7-11eb-022b-3f668454cfa4
+submarine_file = download("https://www.armytimes.com/resizer/dInbB3O2FjcMRYiFS-bCeddG6GQ=/1200x630/filters:quality(100)/arc-anglerfish-arc2-prod-mco.s3.amazonaws.com/public/6KEB377X2RBDVELOUKE5DJSKCA.jpg")
+
+# ╔═╡ c8ecfe5c-ee05-11ea-322b-4b2714898831
+submarine = let
+	original = Images.load(submarine_file)
+# 	decimate(original, 1)
+end
+
+# ╔═╡ cc9b7888-06b7-11eb-020a-03fe02629808
+
+
+# ╔═╡ d333194c-06b7-11eb-2b32-0f34ce580e8f
+typeof(submarine)
 
 # ╔═╡ e86ed944-ee05-11ea-3e0f-d70fc73b789c
 md"_Hi there Philip_"
@@ -227,6 +254,9 @@ function mean_colors(image)
 	
 	return missing
 end
+
+# ╔═╡ 5be9b144-ee0d-11ea-2a8d-8775de265a1d
+mean_colors(philip)
 
 # ╔═╡ d75ec078-ee0d-11ea-3723-71fb8eecb040
 
@@ -280,6 +310,9 @@ _Write the function in the same cell as `quantize(x::Number)` from the last exer
 
 # ╔═╡ 25dad7ce-ee0b-11ea-3e20-5f3019dd7fa3
 md"Let's apply your method!"
+
+# ╔═╡ 9751586e-ee0c-11ea-0cbb-b7eda92977c9
+quantize(philip)
 
 # ╔═╡ f6cc03a0-ee07-11ea-17d8-013991514d42
 md"""
@@ -364,6 +397,9 @@ _Write the function in the same cell as `noisify(x::Number)` from the last exerc
 # ╔═╡ e70a84d4-ee0c-11ea-0640-bf78653ba102
 @bind philip_noise Slider(0:0.01:8, show_value=true)
 
+# ╔═╡ ac15e0d0-ee0c-11ea-1eaf-d7f88b5df1d7
+noisify(philip, philip_noise)
+
 # ╔═╡ 9604bc44-ee1b-11ea-28f8-7f7af8d0cbb2
 
 
@@ -385,21 +421,6 @@ The image is unrecognisable with intensity ...
 
 # ╔═╡ e3b03628-ee05-11ea-23b6-27c7b0210532
 decimate(image, ratio=5) = image[1:ratio:end, 1:ratio:end]
-
-# ╔═╡ c8ecfe5c-ee05-11ea-322b-4b2714898831
-philip = let
-	original = Images.load(philip_file)
-	decimate(original, 8)
-end
-
-# ╔═╡ 5be9b144-ee0d-11ea-2a8d-8775de265a1d
-mean_colors(philip)
-
-# ╔═╡ 9751586e-ee0c-11ea-0cbb-b7eda92977c9
-quantize(philip)
-
-# ╔═╡ ac15e0d0-ee0c-11ea-1eaf-d7f88b5df1d7
-noisify(philip, philip_noise)
 
 # ╔═╡ e08781fa-ed61-11ea-13ae-91a49b5eb74a
 md"""
@@ -1369,6 +1390,7 @@ with_sobel_edge_detect(sobel_camera_image)
 # ╟─ad6a33b0-eded-11ea-324c-cfabfd658b56
 # ╠═f51333a6-eded-11ea-34e6-bfbb3a69bcb0
 # ╠═b2e91646-05f1-11eb-0ba4-d7aeccbb7d23
+# ╠═0c3b40e6-06b7-11eb-3db2-3332bbe91bdb
 # ╟─b18e2c54-edf1-11ea-0cbf-85946d64b6a2
 # ╟─397941fc-edee-11ea-33f2-5d46c759fbf7
 # ╟─b1d5ca28-edf6-11ea-269e-75a9fb549f1d
@@ -1387,7 +1409,9 @@ with_sobel_edge_detect(sobel_camera_image)
 # ╠═73ef1d50-edf0-11ea-343c-d71706874c82
 # ╟─a5f8bafe-edf0-11ea-0da3-3330861ae43a
 # ╠═b6b65b94-edf0-11ea-3686-fbff0ff53d08
-# ╟─d862fb16-edf1-11ea-36ec-615d521e6bc0
+# ╠═d862fb16-edf1-11ea-36ec-615d521e6bc0
+# ╠═9e61dfd8-06b8-11eb-3f85-77bb44f52bb9
+# ╠═b0cb5d8e-06b8-11eb-1196-2563b763990e
 # ╟─e3394c8a-edf0-11ea-1bb8-619f7abb6881
 # ╟─22f28dae-edf2-11ea-25b5-11c369ae1253
 # ╠═8c19fb72-ed6c-11ea-2728-3fa9219eddc4
@@ -1397,11 +1421,15 @@ with_sobel_edge_detect(sobel_camera_image)
 # ╠═9f1c6d04-ed6c-11ea-007b-75e7e780703d
 # ╠═70955aca-ed6e-11ea-2330-89b4d20b1795
 # ╟─e06b7fbc-edf2-11ea-1708-fb32599dded3
-# ╟─5da8cbe8-eded-11ea-2e43-c5b7cc71e133
+# ╠═5da8cbe8-eded-11ea-2e43-c5b7cc71e133
+# ╠═2303915c-06b7-11eb-2635-b9ba46091293
 # ╟─45815734-ee0a-11ea-2982-595e1fc0e7b1
 # ╟─e083b3e8-ed61-11ea-2ec9-217820b0a1b4
 # ╠═c5484572-ee05-11ea-0424-f37295c3072d
+# ╠═6ec2cfa6-06b7-11eb-022b-3f668454cfa4
 # ╠═c8ecfe5c-ee05-11ea-322b-4b2714898831
+# ╠═cc9b7888-06b7-11eb-020a-03fe02629808
+# ╠═d333194c-06b7-11eb-2b32-0f34ce580e8f
 # ╟─e86ed944-ee05-11ea-3e0f-d70fc73b789c
 # ╟─c54ccdea-ee05-11ea-0365-23aaf053b7d7
 # ╠═f6898df6-ee07-11ea-2838-fde9bc739c11

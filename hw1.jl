@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.11.14
+# v0.12.3
 
 using Markdown
 using InteractiveUtils
@@ -1558,5 +1558,5 @@ with_sobel_edge_detect(sobel_camera_image)
 # ╟─5aa9dfb2-edee-11ea-3754-c368fb40637c
 # ╟─74d44e22-edee-11ea-09a0-69aa0aba3281
 # ╟─115ded8c-ee0a-11ea-3493-89487315feb7
-# ╟─dfb7c6be-ee0d-11ea-194e-9758857f7b20
-# ╟─e15ad330-ee0d-11ea-25b6-1b1b3f3d7888
+# ╠═dfb7c6be-ee0d-11ea-194e-9758857f7b20
+# ╠═e15ad330-ee0d-11ea-25b6-1b1b3f3d7888
